@@ -48,6 +48,7 @@ gem "bootsnap", require: false
 # https://stackoverflow.com/questions/78617432/strange-bundle-update-issue-disappearing-net-pop-0-1-2-dependency
 gem "net-pop", github: "ruby/net-pop"
 
+gem "devise", "~> 4.9"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
