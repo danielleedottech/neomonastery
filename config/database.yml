@@ -18,6 +18,10 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV["NEOMONASTERY_DATABASE_HOST"] %>
+  database: <%= ENV["NEOMONASTERY_DATABASE_DB"] %>
+  username: <%= ENV["NEOMONASTERY_DATABASE_USERNAME"] %>
+  password: <%= ENV["NEOMONASTERY_DATABASE_PASSWORD"] %>
 
 development:
   <<: *default
@@ -79,7 +83,3 @@ test:
 #
 production:
   <<: *default
-  host: <%= ENV["NEOMONASTERY_DATABASE_HOST"] %>
-  database: <%= ENV["NEOMONASTERY_DATABASE_DB"] %>
-  username: <%= ENV["NEOMONASTERY_DATABASE_USERNAME"] %>
-  password: <%= ENV["NEOMONASTERY_DATABASE_PASSWORD"] %>
