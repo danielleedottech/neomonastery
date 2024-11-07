@@ -11,6 +11,15 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+    <a href="<%= root_path %>" class="navbar-brand">Neo Monastery</a>
+    <div>
+      <a class="btn btn-primary me-2" href="<%= new_user_session_path %>">Login</a>
+      <%= link_to 'Logout', destroy_user_session_path, class: 'btn btn-danger', method: :delete %>
+      <a class="btn btn-success" href="<%= new_user_registration_path %>">Register</a>
+    </div>
+
+  </nav>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
