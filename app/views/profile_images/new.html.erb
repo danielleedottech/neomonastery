@@ -1,0 +1,11 @@
+<% if @user.profile_image.attached? %>
+  <h1>Current Image</h1>
+  <%= image_tag @user.profile_image.variant(resize_to_limit: [400, 400]) %>
+<% else %>
+  <h1>Upload Image</h1>
+<% end %>
+
+<%= form_with url: profile_images_path, action: 'POST' do |f| %>
+  <%= f.file_field :profile_image %>
+  <%= f.submit 'Save profile image' %>
+<% end %>
