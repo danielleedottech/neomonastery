@@ -282,7 +282,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   dotenv
-  image_processing (>= 1.2)
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   net-pop!

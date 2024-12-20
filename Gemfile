@@ -42,7 +42,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 # this is needed because of this below issue
 # https://stackoverflow.com/questions/78617432/strange-bundle-update-issue-disappearing-net-pop-0-1-2-dependency
@@ -50,7 +50,6 @@ gem "net-pop", github: "ruby/net-pop"
 
 gem "devise", "~> 4.9"
 
-gem "image_processing", ">= 1.2"
 gem 'aws-sdk-s3'
 
 group :development, :test do
