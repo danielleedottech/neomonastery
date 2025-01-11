@@ -1,6 +1,7 @@
 class PrayerRequestsController < ApplicationController
   before_action :set_prayer_request, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[ index show ]
+  before_action :authorize_user, only: %i[ edit update destroy ]
 
   # GET /prayer_requests or /prayer_requests.json
   def index
@@ -68,5 +69,9 @@ class PrayerRequestsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def prayer_request_params
       params.require(:prayer_request).permit(:title, :content)
+    end
+
+    def authorize_user
+      redirect_to home_index_path unless current_user.id == @prayer_request.user.id
     end
 end

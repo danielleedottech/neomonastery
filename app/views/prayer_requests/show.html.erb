@@ -3,8 +3,13 @@
 <%= render @prayer_request %>
 
 <div>
-  <%= link_to "Edit this prayer request", edit_prayer_request_path(@prayer_request) %> |
+  <% if @prayer_request.user.id == current_user.id %>
+    <%= link_to "Edit this prayer request", edit_prayer_request_path(@prayer_request) %> |
+  <% end %>
+
   <%= link_to "Back to prayer requests", prayer_requests_path %>
 
-  <%= button_to "Destroy this prayer request", @prayer_request, method: :delete %>
+  <% if @prayer_request.user.id == current_user.id %>
+    <%= button_to "Destroy this prayer request", @prayer_request, method: :delete, class: 'btn btn-outline-danger' %>
+  <% end %>
 </div>
