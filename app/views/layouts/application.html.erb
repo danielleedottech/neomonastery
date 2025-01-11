@@ -11,16 +11,23 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
-    <a href="<%= root_path %>" class="navbar-brand">Neo Monastery</a>
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, class: 'btn btn-danger',  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }  %>
-    <% else %>
-        <a class="btn btn-primary me-2" href="<%= new_user_session_path %>">Login</a>
-        <a class="btn btn-success" href="<%= new_user_registration_path %>">Register</a>
-      <% end %>
+  <nav class="navbar navbar-dark bg-dark d-flex justify-content-between flex-nowrap">
+    <a href="<%= root_path %>" class="navbar-brand me-5 btn btn-outline-info"><p class="h2">NeoMonastery</p></a>
+    <div class="w-75">
+      <div class="d-flex justify-content-start">
+        <%= link_to 'Prayer Requests', prayer_requests_path, class: 'btn light' %>
+      </div>
+    </div>
 
+    <div class="w-25">
+      <div class="w-100 d-flex justify-content-end">
+      <% if user_signed_in? %>
+        <%= link_to 'Logout', destroy_user_session_path, class: 'btn btn-danger nav-item',  data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }  %>
+    <% else %>
+        <a class="btn btn-primary me-2 nav-item" href="<%= new_user_session_path %>">Login</a>
+        <a class="btn btn-success nav-item" href="<%= new_user_registration_path %>">Register</a>
+      <% end %>
+      </div>
     </div>
 
   </nav>
